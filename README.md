@@ -10,6 +10,6 @@
 
 # Team Members
 
-1. **Member 1**: Soumik Deb Niloy 
-2. **Member 2**: Shaownak Shahriar
-3. **Member 3**: Debjoty Mitra
+1.  Soumik Deb Niloy 
+2.  Shaownak Shahriar
+3.  Debjoty Mitra
