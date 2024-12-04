@@ -1,0 +1,34 @@
+@model IEnumerable<ERP.Models.Procurement.Procurement_M>
+
+    <h2>Procurement Requests</h2>
+
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th>Item Name</th>
+                <th>Quantity</th>
+                <th>Request Date</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var procurement in Model)
+        {
+            <tr>
+                <td>@procurement.ItemName</td>
+                <td>@procurement.Quantity</td>
+                <td>@procurement.RequestDate.ToShortDateString()</td>
+                <td>@procurement.Status</td>
+                <td>
+                    @if (procurement.Status == "Pending")
+                    {
+                    <a href="/Procurement/Approve/@procurement.ProcurementId" class="btn btn-success">Approve</a>
+                    }
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+
+    <a href="/Procurement/Create" class="btn btn-primary">Create Procurement Request</a>
