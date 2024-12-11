@@ -1,19 +1,23 @@
-﻿@model IEnumerable<ERP.Models.Inventory.InventoryItem>
+﻿@{
+    ViewData["Title"] = "Index";
+}
+@model IEnumerable<ERP.Models.Inventory.InventoryItem>
 
-    <h2>Inventory List</h2>
+<h1>Index</h1>
+<h2>Inventory List</h2>
 
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Quantity</th>
-                <th>Price</th>
-                <th>Supplier</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Supplier</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
         {
             <tr>
                 <td>@item.Name</td>
@@ -27,7 +31,6 @@
                 </td>
             </tr>
         }
-        </tbody>
-    </table>
-
-    <a href="@Url.Action("Create")" class="btn btn-primary">Add New Item</a>
+    </tbody>
+</table>
+<a href="@Url.Action("Create")" class="btn btn-primary">Add New Item</a>

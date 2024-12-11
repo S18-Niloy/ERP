@@ -1,18 +1,16 @@
-@model IEnumerable<ERP.Models.Supplier.Supplier_M>
-
-    <h2>Suppliers</h2>
-
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Contact Details</th>
-                <th>Performance Rating</th>
-                <th>Contract Details</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var supplier in Model)
+﻿@model IEnumerable<ERP.Models.Supplier.Supplier_M>
+<h2>Suppliers</h2>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Contact Details</th>
+            <th>Performance Rating</th>
+            <th>Contract Details</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var supplier in Model)
         {
             <tr>
                 <td>@supplier.Name</td>
@@ -21,7 +19,6 @@
                 <td>@supplier.ContractDetails</td>
             </tr>
         }
-        </tbody>
-    </table>
-
-    <a href="/Supplier/Create" class="btn btn-primary">Add Supplier</a>
+    </tbody>
+</table>
+<a href="/Supplier/Create" class="btn btn-primary">Add Supplier</a>

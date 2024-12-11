@@ -4,14 +4,13 @@
 
 <div class="text-center">
     <h1 class="display-4">Welcome to ERP Software</h1>
-    <p class="lead">
-        Optimize your business processes with our powerful ERP software, designed to improve productivity, streamline operations, and manage key areas like Inventory, Supplier, and Warehouse Management.
-    </p>
+    <p class="lead">Optimize your business processes with our powerful ERP software.</p>
     <hr />
 
     <!-- Navigation Cards for Modules -->
     <div class="container">
         <div class="row">
+
             <!-- Inventory Management Card -->
             <div class="col-md-4">
                 <div class="card">
@@ -50,22 +49,23 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 
     <hr />
 
     <!-- User Authentication Section -->
-    @if (HttpContext.Session.GetString("Username") != null)
+    @if (Context.Session.GetString("Username") != null)
     {
-        <div class="mt-3">
-            <p>Welcome, <strong>@HttpContext.Session.GetString("Username")</strong>!</p>
+        <div>
+            Welcome, @Context.Session.GetString("Username")!
             <a href="@Url.Action("Logout", "Account")" class="btn btn-danger">Logout</a>
         </div>
     }
     else
     {
-        <div class="mt-3">
+        <div>
             <a href="@Url.Action("Login", "Account")" class="btn btn-info">Login</a>
         </div>
     }
@@ -73,7 +73,7 @@
     <hr />
 
     <!-- Footer Section for Additional Information -->
-    <footer class="text-center mt-5">
+    <footer class="text-center">
         <p>&copy; 2024 ERP Solutions. All rights reserved.</p>
         <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
     </footer>

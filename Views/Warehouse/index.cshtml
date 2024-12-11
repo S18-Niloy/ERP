@@ -1,19 +1,19 @@
-@model IEnumerable<ERP.Models.Warehouse.Warehouse_M>
+﻿@model IEnumerable<ERP.Models.Warehouse.Warehouse_M>
 
-    <h2>Warehouses</h2>
+<h2>Warehouses</h2>
 
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Location</th>
-                <th>Capacity</th>
-                <th>Current Stock</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var warehouse in Model)
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Location</th>
+            <th>Capacity</th>
+            <th>Current Stock</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var warehouse in Model)
         {
             <tr>
                 <td>@warehouse.Name</td>
@@ -25,7 +25,7 @@
                 </td>
             </tr>
         }
-        </tbody>
-    </table>
+    </tbody>
+</table>
 
-    <a href="/Warehouse/Create" class="btn btn-primary">Add Warehouse</a>
+<a href="/Warehouse/Create" class="btn btn-primary">Add Warehouse</a>

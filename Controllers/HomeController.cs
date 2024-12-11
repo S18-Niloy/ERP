@@ -2,7 +2,7 @@ using System.Diagnostics;
 using ERP.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ERP.Controllers
+namespace ERP.Controllers.Supplier
 {
     public class HomeController : Controller
     {
