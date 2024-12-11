@@ -2,11 +2,14 @@
 
     <h2>Warehouses</h2>
 
-    <table class="table table-striped">
+    <table class="table table-bordered">
         <thead>
             <tr>
                 <th>Name</th>
                 <th>Location</th>
+                <th>Capacity</th>
+                <th>Current Stock</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -15,6 +18,11 @@
             <tr>
                 <td>@warehouse.Name</td>
                 <td>@warehouse.Location</td>
+                <td>@warehouse.Capacity</td>
+                <td>@warehouse.CurrentStock</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@warehouse.WarehouseId" class="btn btn-info">Details</a>
+                </td>
             </tr>
         }
         </tbody>

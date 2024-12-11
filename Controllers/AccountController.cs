@@ -15,6 +15,8 @@ namespace ERP.Controllers
             { "user", "password123" }
         };
 
+        public static Dictionary<global::System.String, global::System.String> Users1 => Users;
+
         // Show the login form
         public IActionResult Login()
         {
@@ -27,7 +29,7 @@ namespace ERP.Controllers
         {
             if (ModelState.IsValid)
             {
-                if (Users.TryGetValue(model.Username, out var password) && password == model.Password)
+                if (Users1.TryGetValue(model.Username, out var password) && password == model.Password)
                 {
                     // Set session for the logged-in user
                     HttpContext.Session.SetString(SessionKeyUsername, model.Username);

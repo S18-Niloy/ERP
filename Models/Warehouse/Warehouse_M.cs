@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace ERP.Models.Warehouse
 {
@@ -8,26 +7,17 @@ namespace ERP.Models.Warehouse
         [Key]
         public int WarehouseId { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Warehouse name is required.")]
         [StringLength(100)]
         public string Name { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Location is required.")]
+        [StringLength(200)]
         public string Location { get; set; }
 
-        public ICollection<StockItem> StockItems { get; set; }
-    }
+        [Range(0, int.MaxValue, ErrorMessage = "Capacity must be a positive number.")]
+        public int Capacity { get; set; }
 
-    public class StockItem
-    {
-        [Key]
-        public int StockItemId { get; set; }
-
-        [Required]
-        public string ProductName { get; set; }
-
-        public int Quantity { get; set; }
-        public int WarehouseId { get; set; }
-        public Warehouse_M Warehouse { get; set; }
+        public int CurrentStock { get; set; }
     }
 }
