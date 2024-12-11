@@ -1,5 +1,5 @@
 
-# Project Modules and Functional Requirements
+# Project Modules and Functional Requirements (ERP Software for E-commerce)
 
 | **Number** | **Module**                        | **Functional Requirements**                                                                                                                                                                         |
 |------------|------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
