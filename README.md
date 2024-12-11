@@ -13,3 +13,48 @@
 1.  Soumik Deb Niloy 
 2.  Shaownak Shahriar
 3.  Debjoty Mitra
+
+## Steps to Run the Project
+
+### 1. Clone the Repository
+
+Clone the project repository to your local machine:
+
+```bash
+git clone <repository-url>
+```
+
+Replace `<repository-url>` with the actual URL of your repository.
+
+### 2. Navigate to the Project Directory
+
+Move into the project directory:
+
+```bash
+cd <project-directory>
+```
+
+Replace `<project-directory>` with the folder name of the cloned repository.
+
+### 3. Restore Dependencies
+
+Restore the necessary NuGet packages:
+
+```bash
+dotnet restore
+```
+
+### 4. Build the Project
+
+Build the project to ensure there are no compilation errors:
+
+```bash
+dotnet build
+```
+
+### 5. Run the Project
+
+Run the project locally:
+
+```bash
+dotnet run
