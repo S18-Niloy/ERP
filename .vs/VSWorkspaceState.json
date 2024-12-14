@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Controllers",
+    "\\Models",
+    "\\Models\\Warehouse",
+    "\\Views",
+    "\\Views\\Home",
+    "\\Views\\Procurement",
+    "\\Views\\Supplier"
+  ],
+  "SelectedNode": "\\Models",
+  "PreviewInSolutionExplorer": false
+}

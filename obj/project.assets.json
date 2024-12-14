@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Public\\ERP\\ERP.csproj",
+      "projectUniqueName": "C:\\Users\\Fahim\\ERP\\ERP.csproj",
       "projectName": "ERP",
-      "projectPath": "C:\\Users\\Public\\ERP\\ERP.csproj",
+      "projectPath": "C:\\Users\\Fahim\\ERP\\ERP.csproj",
       "packagesPath": "C:\\Users\\Fahim\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Public\\ERP\\obj\\",
+      "outputPath": "C:\\Users\\Fahim\\ERP\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
