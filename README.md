@@ -13,3 +13,15 @@
 1.  Soumik Deb Niloy 
 2.  Shaownak Shahriar
 3.  Debjoty Mitra
+
+# Run this project
+
+```
+git clone <copy link from the codebar and paste>
+```
+```
+cd ERP
+```
+```
+dotnet run
+```
