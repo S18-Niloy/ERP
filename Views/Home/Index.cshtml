@@ -4,7 +4,7 @@
 
 <div class="text-center">
     <h1 class="display-4">Welcome to ERP Software</h1>
-    <p class="lead">Optimize your business processes with our powerful ERP software.</p>
+    <p class="lead">Optimize your business processes with our powerful ERP software</p>
     <hr />
 
     <!-- Navigation Cards for Modules -->
@@ -61,6 +61,54 @@
                     </div>
                 </div>
             </div>
+            <!-- Order Card -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header bg-success text-white">
+                        <h4>Order Management</h4>
+                    </div>
+                    <div class="card-body">
+                        <p>Create, modify, and track purchase and sales orders.</p>
+                        <a href="@Url.Action("Index", "Order")" class="btn btn-success">View Order</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Sales Card -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header bg-success text-white">
+                        <h4>Sales Management</h4>
+                    </div>
+                    <div class="card-body">
+                        <p> Generate and manage customer quotations</p>
+                        <a href="@Url.Action("Index", "Sales")" class="btn btn-success">View Sales</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Invoice Card -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h4>Invoice and Billing</h4>
+                    </div>
+                    <div class="card-body">
+                        <p>Issue invoices, manage payments, and integrate tax calculations</p>
+                        <a href="@Url.Action("Index", "Invoice")" class="btn btn-primary">Billing status</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Customer Card -->
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h4>Customers</h4>
+                    </div>
+                    <div class="card-body">
+                        <p>Maintain customer profiles, purchase history, and support tickets.</p>
+                        <a href="@Url.Action("Index", "Customer")" class="btn btn-primary">View Customers</a>
+                    </div>
+                </div>
+            </div>
 
         </div>
     </div>
@@ -86,7 +134,7 @@
 
     <!-- Footer Section for Additional Information -->
     <footer class="text-center">
-        <p>&copy; 2024 ERP Solutions. All rights reserved.</p>
+        <p>&copy; 2024 ERP Solutions. Made by Soumik, Shaownak and Debjoty.</p>
         <p><a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
     </footer>
 </div>

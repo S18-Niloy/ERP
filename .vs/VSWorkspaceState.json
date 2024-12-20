@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Controllers",
+    "\\Controllers\\Inventory",
+    "\\Controllers\\Invoices",
+    "\\Controllers\\Procurement",
+    "\\Controllers\\Sales",
+    "\\Models",
+    "\\Models\\Customer",
+    "\\Views",
+    "\\Views\\Customer"
+  ],
+  "SelectedNode": "\\Controllers\\Invoices\\InvoiceController.cs",
+  "PreviewInSolutionExplorer": false
+}

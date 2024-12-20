@@ -1,0 +1,35 @@
+@model List<ERP.Models.Orders.Order>
+
+    <h2>Order Management</h2>
+
+    <a asp-action="Create" class="btn btn-primary">Create New Order</a>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Order ID</th>
+                <th>Customer Name</th>
+                <th>Item Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var order in Model)
+        {
+            <tr>
+                <td>@order.OrderId</td>
+                <td>@order.CustomerName</td>
+                <td>@order.ItemName</td>
+                <td>@order.Quantity</td>
+                <td>@order.Price</td>
+                <td>@order.Status</td>
+                <td>
+                    <a asp-action="Process" asp-route-id="@order.OrderId" class="btn btn-success">Process</a>
+                    <a asp-action="Cancel" asp-route-id="@order.OrderId" class="btn btn-danger">Cancel</a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>

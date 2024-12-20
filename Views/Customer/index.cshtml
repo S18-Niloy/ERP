@@ -1,0 +1,32 @@
+@model List<ERP.Models.Customer.Customer_M>
+
+    <h2>Customer Management</h2>
+
+    <a asp-action="Create" class="btn btn-primary">Add New Customer</a>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Customer ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var customer in Model)
+        {
+            <tr>
+                <td>@customer.CustomerId</td>
+                <td>@customer.Name</td>
+                <td>@customer.Email</td>
+                <td>@customer.Phone</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@customer.CustomerId" class="btn btn-warning">Edit</a>
+                    <a asp-action="Details" asp-route-id="@customer.CustomerId" class="btn btn-info">Details</a>
+                    <a asp-action="Delete" asp-route-id="@customer.CustomerId" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>

@@ -1,0 +1,26 @@
+@model ERP.Models.Invoice.Invoice
+
+<h2>Create Invoice</h2>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label>Customer Name</label>
+        <input asp-for="CustomerName" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Invoice Date</label>
+        <input asp-for="InvoiceDate" type="date" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Total Amount</label>
+        <input asp-for="TotalAmount" type="number" step="0.01" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Status</label>
+        <select asp-for="Status" class="form-control">
+            <option value="Paid">Paid</option>
+            <option value="Unpaid">Unpaid</option>
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

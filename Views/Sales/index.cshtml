@@ -1,0 +1,36 @@
+@model List<ERP.Models.Sales.Sale>
+
+    <h2>Sales Management</h2>
+
+    <a asp-action="Create" class="btn btn-primary">Add New Sale</a>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Sale ID</th>
+                <th>Customer Name</th>
+                <th>Item Name</th>
+                <th>Quantity</th>
+                <th>Total Price</th>
+                <th>Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var sale in Model)
+        {
+            <tr>
+                <td>@sale.SaleId</td>
+                <td>@sale.CustomerName</td>
+                <td>@sale.ItemName</td>
+                <td>@sale.Quantity</td>
+                <td>@sale.TotalPrice</td>
+                <td>@sale.Date.ToShortDateString()</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@sale.SaleId" class="btn btn-warning">Edit</a>
+                    <a asp-action="Details" asp-route-id="@sale.SaleId" class="btn btn-info">Details</a>
+                    <a asp-action="Delete" asp-route-id="@sale.SaleId" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>

@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ERP.Controllers
+namespace ERP.Controllers.Procurement
 {
     public class ProcurementController : Controller
     {
