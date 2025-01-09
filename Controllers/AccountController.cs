@@ -41,6 +41,24 @@ namespace ERP.Controllers
             return View(model);
         }
 
+        // Show the sign-up form
+        public IActionResult SignUp()
+        {
+            return View();
+        }
+
+        // Handle sign-up form submission
+        [HttpPost]
+        public IActionResult SignUp(SignUpViewModel model)
+        {
+            // ...logic to create new user...
+            if (!Users.ContainsKey(model.Username))
+            {
+                Users.Add(model.Username, model.Password);
+            }
+            return RedirectToAction("Login");
+        }
+
         // Logout and clear session
         public IActionResult Logout()
         {

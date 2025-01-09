@@ -1,8 +1,21 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-
-<div class="text-center">
+    <!-- User Authentication Section -->
+<div class="text-center"></div>
+    @if (Context.Session.GetString("Username") != null)
+    {
+        <div>
+            Welcome, @Context.Session.GetString("Username")!
+            <a href="@Url.Action("Logout", "Account")" class="btn btn-danger">Logout</a>
+        </div>
+    }
+    else
+    {
+        <div>
+            <a href="@Url.Action("Login", "Account")" class="btn btn-info">Login</a>
+        </div>
+    }
     <h1 class="display-4">Welcome to ERP Software</h1>
     <p class="lead">Optimize your business processes with our powerful ERP software</p>
     <hr />
@@ -11,9 +24,22 @@
     <div class="container">
         <div class="row">
 
+            <!-- Reporting and Dashboards Card -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-header bg-primary text-white">
+                        <h4>Reporting and Dashboards</h4>
+                    </div>
+                    <div class="card-body">
+                        <p>Generate business analytics reports and visualize data with interactive dashboards.</p>
+                        <a href="@Url.Action("Index", "Dashboard")" class="btn btn-primary">View Reports</a>
+                    </div>
+                </div>
+            </div>
+
             <!-- Inventory Management Card -->
-            <div class="col-md-4">
-                <div class="card">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
                     <div class="card-header bg-primary text-white">
                         <h4>Inventory Management</h4>
                     </div>
@@ -25,8 +51,8 @@
             </div>
 
             <!-- Supplier Management Card -->
-            <div class="col-md-4">
-                <div class="card">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
                     <div class="card-header bg-success text-white">
                         <h4>Supplier Management</h4>
                     </div>
@@ -38,8 +64,8 @@
             </div>
 
             <!-- Warehouse Management Card -->
-            <div class="col-md-4">
-                <div class="card">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
                     <div class="card-header bg-warning text-white">
                         <h4>Warehouse Management</h4>
                     </div>
@@ -49,21 +75,23 @@
                     </div>
                 </div>
             </div>
+
             <!-- Procurement Card -->
-            <div class="col-md-4">
-                <div class="card">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
                     <div class="card-header bg-warning text-white">
                         <h4>Procurement Management</h4>
                     </div>
                     <div class="card-body">
-                        <p>Automate purchase requests, approvals, and orders</p>
+                        <p>Automate purchase requests, approvals, and orders.</p>
                         <a href="@Url.Action("Index", "Procurement")" class="btn btn-warning">View Procurement</a>
                     </div>
                 </div>
             </div>
+
             <!-- Order Card -->
-            <div class="col-md-4">
-                <div class="card">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
                     <div class="card-header bg-success text-white">
                         <h4>Order Management</h4>
                     </div>
@@ -73,33 +101,36 @@
                     </div>
                 </div>
             </div>
+
             <!-- Sales Card -->
-            <div class="col-md-4">
-                <div class="card">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
                     <div class="card-header bg-success text-white">
                         <h4>Sales Management</h4>
                     </div>
                     <div class="card-body">
-                        <p> Generate and manage customer quotations</p>
+                        <p>Generate and manage customer quotations.</p>
                         <a href="@Url.Action("Index", "Sales")" class="btn btn-success">View Sales</a>
                     </div>
                 </div>
             </div>
+
             <!-- Invoice Card -->
-            <div class="col-md-4">
-                <div class="card">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
                     <div class="card-header bg-primary text-white">
                         <h4>Invoice and Billing</h4>
                     </div>
                     <div class="card-body">
-                        <p>Issue invoices, manage payments, and integrate tax calculations</p>
+                        <p>Issue invoices, manage payments, and integrate tax calculations.</p>
                         <a href="@Url.Action("Index", "Invoice")" class="btn btn-primary">Billing status</a>
                     </div>
                 </div>
             </div>
+
             <!-- Customer Card -->
-            <div class="col-md-4">
-                <div class="card">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
                     <div class="card-header bg-primary text-white">
                         <h4>Customers</h4>
                     </div>
@@ -115,20 +146,6 @@
 
     <hr />
 
-    <!-- User Authentication Section -->
-    @if (Context.Session.GetString("Username") != null)
-    {
-        <div>
-            Welcome, @Context.Session.GetString("Username")!
-            <a href="@Url.Action("Logout", "Account")" class="btn btn-danger">Logout</a>
-        </div>
-    }
-    else
-    {
-        <div>
-            <a href="@Url.Action("Login", "Account")" class="btn btn-info">Login</a>
-        </div>
-    }
 
     <hr />
 
