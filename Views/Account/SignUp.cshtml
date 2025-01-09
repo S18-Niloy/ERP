@@ -1,12 +1,28 @@
 @{
-    ViewData["Title"] = "Dashboard";
+    ViewData["Title"] = "Sign Up";
 }
 
-<h2>This is a dashboard page</h2>
-
-@model ERP.Models.SignUpViewModel
-<form asp-action="SignUp" asp-controller="Account" method="post">
-    <input asp-for="Username" placeholder="Username" />
-    <input asp-for="Password" type="password" placeholder="Password" />
-    <button type="submit">Create Account</button>
-</form>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow">
+                <div class="card-body">
+                    <h2 class="text-center mb-4">Create a New Account</h2>
+                    
+                    @model ERP.Models.SignUpViewModel
+                    <form asp-action="SignUp" asp-controller="Account" method="post">
+                        <div class="mb-3">
+                            <input asp-for="Username" class="form-control" placeholder="Username" />
+                        </div>
+                        <div class="mb-3">
+                            <input asp-for="Password" type="password" class="form-control" placeholder="Password" />
+                        </div>
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary">Create Account</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div></div>
