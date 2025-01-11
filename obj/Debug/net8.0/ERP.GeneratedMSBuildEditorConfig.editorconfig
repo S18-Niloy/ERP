@@ -26,12 +26,24 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWNjb3VudC9TaWduVXAuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[/Users/debjotyms/Documents/Code/GitHub/ERP/Views/Admin/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vaW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/debjotyms/Documents/Code/GitHub/ERP/Views/Admin/ShippingAndLogistics.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vU2hpcHBpbmdBbmRMb2dpc3RpY3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [/Users/debjotyms/Documents/Code/GitHub/ERP/Views/Customer/create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ3VzdG9tZXIvY3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/debjotyms/Documents/Code/GitHub/ERP/Views/Customer/index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ3VzdG9tZXIvaW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/debjotyms/Documents/Code/GitHub/ERP/Views/Dashboard/admin-panel.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3MvRGFzaGJvYXJkL2FkbWluLXBhbmVsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/debjotyms/Documents/Code/GitHub/ERP/Views/Dashboard/index.cshtml]

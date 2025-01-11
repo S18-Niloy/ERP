@@ -1,0 +1,333 @@
+@{
+    ViewData["Title"] = "User Roles and Permissions";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"] - Your Application</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <style>
+        .pointer { cursor: pointer; }
+        .modal-header { background-color: #f8f9fa; }
+    </style>
+</head>
+<body>
+    <div class="container-fluid mt-4">
+        <h2>@ViewData["Title"]</h2>
+        <hr />
+
+        <!-- Roles Management Section -->
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <span>Existing Roles</span>
+                        <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#createRoleModal">
+                            <i class="fas fa-plus"></i> Add New Role
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Role Name</th>
+                                    <th>Permissions</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Administrator</td>
+                                    <td>All Permissions</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-info" data-toggle="modal" data-target="#editRoleModal">
+                                            <i class="fas fa-edit"></i> Edit
+                                        </button>
+                                        <button class="btn btn-sm btn-danger">
+                                            <i class="fas fa-trash-alt"></i> Delete
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Manager</td>
+                                    <td>Inventory, Sales, Reporting</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-info" data-toggle="modal" data-target="#editRoleModal">
+                                            <i class="fas fa-edit"></i> Edit
+                                        </button>
+                                        <button class="btn btn-sm btn-danger">
+                                            <i class="fas fa-trash-alt"></i> Delete
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Sales Representative</td>
+                                    <td>Sales, Customer Management</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-info" data-toggle="modal" data-target="#editRoleModal">
+                                            <i class="fas fa-edit"></i> Edit
+                                        </button>
+                                        <button class="btn btn-sm btn-danger">
+                                            <i class="fas fa-trash-alt"></i> Delete
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Users Management Section -->
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                        <span>Users and Their Roles</span>
+                        <button class="btn btn-primary btn-sm" data-toggle="modal" data-target="#assignRoleModal">
+                            <i class="fas fa-user-plus"></i> Assign Role
+                        </button>
+                    </div>
+                    <div class="card-body">
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>User Name</th>
+                                    <th>Email</th>
+                                    <th>Assigned Roles</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>John Doe</td>
+                                    <td>john.doe@example.com</td>
+                                    <td>Administrator</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-info" data-toggle="modal" data-target="#assignRoleModal">
+                                            <i class="fas fa-edit"></i> Modify
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Jane Smith</td>
+                                    <td>jane.smith@example.com</td>
+                                    <td>Manager</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-info" data-toggle="modal" data-target="#assignRoleModal">
+                                            <i class="fas fa-edit"></i> Modify
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Acme Corp.</td>
+                                    <td>contact@acmecorp.com</td>
+                                    <td>Sales Representative</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-info" data-toggle="modal" data-target="#assignRoleModal">
+                                            <i class="fas fa-edit"></i> Modify
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Bob Johnson</td>
+                                    <td>bob.johnson@example.com</td>
+                                    <td>Sales Representative</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-info" data-toggle="modal" data-target="#assignRoleModal">
+                                            <i class="fas fa-edit"></i> Modify
+                                        </button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Linda Lee</td>
+                                    <td>linda.lee@example.com</td>
+                                    <td>Manager</td>
+                                    <td>
+                                        <button class="btn btn-sm btn-info" data-toggle="modal" data-target="#assignRoleModal">
+                                            <i class="fas fa-edit"></i> Modify
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <a href="#" class="btn btn-primary btn-sm">View All Users</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Create Role Modal -->
+        <div class="modal fade" id="createRoleModal" tabindex="-1" aria-labelledby="createRoleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <form>
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="createRoleModalLabel">Create New Role</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="roleName">Role Name</label>
+                                <input type="text" class="form-control" id="roleName" placeholder="Enter role name" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Permissions</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="permInventory">
+                                    <label class="form-check-label" for="permInventory">
+                                        Inventory Management
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="permSales">
+                                    <label class="form-check-label" for="permSales">
+                                        Sales Management
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="permReporting">
+                                    <label class="form-check-label" for="permReporting">
+                                        Reporting and Analytics
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="permUserMgmt">
+                                    <label class="form-check-label" for="permUserMgmt">
+                                        User Management
+                                    </label>
+                                </div>
+                                <!-- Add more permissions as needed -->
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                            <button type="submit" class="btn btn-primary">Create Role</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Edit Role Modal -->
+        <div class="modal fade" id="editRoleModal" tabindex="-1" aria-labelledby="editRoleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <form>
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="editRoleModalLabel">Edit Role</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="editRoleName">Role Name</label>
+                                <input type="text" class="form-control" id="editRoleName" value="Manager" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Permissions</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="editPermInventory" checked>
+                                    <label class="form-check-label" for="editPermInventory">
+                                        Inventory Management
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="editPermSales" checked>
+                                    <label class="form-check-label" for="editPermSales">
+                                        Sales Management
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="editPermReporting">
+                                    <label class="form-check-label" for="editPermReporting">
+                                        Reporting and Analytics
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="editPermUserMgmt">
+                                    <label class="form-check-label" for="editPermUserMgmt">
+                                        User Management
+                                    </label>
+                                </div>
+                                <!-- Add more permissions as needed -->
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                            <button type="submit" class="btn btn-primary">Save Changes</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Assign Role Modal -->
+        <div class="modal fade" id="assignRoleModal" tabindex="-1" aria-labelledby="assignRoleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <form>
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="assignRoleModalLabel">Assign Role to User</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="selectUser">Select User</label>
+                                <select class="form-control" id="selectUser" required>
+                                    <option>John Doe</option>
+                                    <option>Jane Smith</option>
+                                    <option>Acme Corp.</option>
+                                    <option>Bob Johnson</option>
+                                    <option>Linda Lee</option>
+                                    <!-- Add more users as needed -->
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="selectRole">Select Role</label>
+                                <select class="form-control" id="selectRole" required>
+                                    <option>Administrator</option>
+                                    <option>Manager</option>
+                                    <option>Sales Representative</option>
+                                    <!-- Add more roles as needed -->
+                                </select>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                            <button type="submit" class="btn btn-primary">Assign Role</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Optional: Custom JavaScript for Enhancements -->
+    <script>
+        // Example: Handle form submissions with JavaScript (to be replaced with actual backend logic)
+        $(document).ready(function(){
+            $('form').on('submit', function(event){
+                event.preventDefault();
+                // Here you would typically send the form data to the server via AJAX
+                alert('Form submitted! (This is a dummy action)');
+                $(this).closest('.modal').modal('hide');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -23,11 +23,23 @@
     <!-- Navigation Cards for Modules -->
     <div class="container">
         <div class="row">
+            <!-- Admin Panel Card -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-header bg-danger text-white">
+                        <h4>Admin Panel</h4>
+                    </div>
+                    <div class="card-body">
+                        <p>Manage users, roles, and system configurations. Monitor system activities.</p>
+                        <a href="@Url.Action("Index", "Admin")" class="btn btn-danger">Access Admin</a>
+                    </div>
+                </div>
+            </div>
 
             <!-- Reporting and Dashboards Card -->
             <div class="col-md-4 mb-4">
                 <div class="card h-100 shadow-sm">
-                    <div class="card-header bg-primary text-white">
+                    <div class="card-header bg-info text-white">
                         <h4>Reporting and Dashboards</h4>
                     </div>
                     <div class="card-body">
@@ -137,6 +149,19 @@
                     <div class="card-body">
                         <p>Maintain customer profiles, purchase history, and support tickets.</p>
                         <a href="@Url.Action("Index", "Customer")" class="btn btn-primary">View Customers</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Shipping & Logistics Card -->
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-header bg-secondary text-white">
+                        <h4>Shipping & Logistics</h4>
+                    </div>
+                    <div class="card-body">
+                        <p>Manage and track shipments, coordinate logistics, and streamline delivery processes.</p>
+                        <a href="@Url.Action("ShippingAndLogistics", "Admin")" class="btn btn-secondary">Go to Shipping & Logistics</a>
                     </div>
                 </div>
             </div>
