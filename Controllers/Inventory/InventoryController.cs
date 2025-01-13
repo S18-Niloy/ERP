@@ -74,10 +74,11 @@ namespace ERP.Controllers.Inventory
             var item = _inventory.FirstOrDefault(i => i.Id == id);
             if (item == null)
             {
-                return NotFound();
+                return NotFound(); // If item doesn't exist, return 404.
             }
-            return View(item);
+            return View(item); // Return the delete confirmation view.
         }
+
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public IActionResult DeleteConfirmed(int id)
@@ -85,9 +86,9 @@ namespace ERP.Controllers.Inventory
             var item = _inventory.FirstOrDefault(i => i.Id == id);
             if (item != null)
             {
-                _inventory.Remove(item);
+                _inventory.Remove(item); // Remove the item from the static list.
             }
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Index)); // Redirect back to the Index page.
         }
     }
 }

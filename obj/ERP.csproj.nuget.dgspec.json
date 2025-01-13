@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/debjotyms/Documents/Code/GitHub/ERP/ERP.csproj": {}
+    "/workspaces/ERP/ERP.csproj": {}
   },
   "projects": {
-    "/Users/debjotyms/Documents/Code/GitHub/ERP/ERP.csproj": {
+    "/workspaces/ERP/ERP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/debjotyms/Documents/Code/GitHub/ERP/ERP.csproj",
+        "projectUniqueName": "/workspaces/ERP/ERP.csproj",
         "projectName": "ERP",
-        "projectPath": "/Users/debjotyms/Documents/Code/GitHub/ERP/ERP.csproj",
-        "packagesPath": "/Users/debjotyms/.nuget/packages/",
-        "outputPath": "/Users/debjotyms/Documents/Code/GitHub/ERP/obj/",
+        "projectPath": "/workspaces/ERP/ERP.csproj",
+        "packagesPath": "/home/codespace/.nuget/packages/",
+        "outputPath": "/workspaces/ERP/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/debjotyms/.nuget/NuGet/NuGet.Config"
+          "/home/codespace/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -61,7 +61,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.404/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
