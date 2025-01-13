@@ -25,3 +25,10 @@ cd ERP
 ```
 dotnet run
 ```
+
+Interfaces
+![Upload Example](Contents/P_1.png)
+![Upload Example](Contents/P_2.png)
+![Upload Example](Contents/P_3.png)
+![Upload Example](Contents/p_4.png)
+![Upload Example](Contents/p_5.png)
